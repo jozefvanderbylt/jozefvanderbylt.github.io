@@ -4,11 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VANDERBYLT</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #ffffff;
+    }
+
+    /* --- SPLASH SCREEN --- */
+    .splash {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+    }
+
+    .splash-logo {
+      width: 400px;
+      cursor: pointer;
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .splash-logo:hover {
+      filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+      transform: scale(1.05);
+    }
+
+    /* --- MAIN SITE CONTENT (hidden until clicked) --- */
+    .site-content {
+      display: none;
     }
 
     header img {
@@ -34,8 +60,24 @@
       text-decoration: underline;
     }
   </style>
+
+  <script>
+    function enterSite() {
+      document.querySelector('.splash').style.display = 'none';
+      document.querySelector('.site-content').style.display = 'block';
+    }
+  </script>
 </head>
+
 <body>
+
+<!-- SPLASH SCREEN -->
+<div class="splash">
+  <img src="vanderbylt-white-bg.png" class="splash-logo" alt="VANDERBYLT" onclick="enterSite()">
+</div>
+
+<!-- MAIN SITE CONTENT -->
+<div class="site-content">
 
 <header>
   <img src="IMG_0069.png" alt="VANDERBYLT">
@@ -52,6 +94,8 @@
   <h1>Welcome to Vanderbylt</h1>
   <p>Your content goes here.</p>
 </main>
+
+</div>
 
 </body>
 </html>
